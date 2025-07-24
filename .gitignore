@@ -1,0 +1,9 @@
+build
+cmake-build-debug
+**/build/**/*
+.git
+.idea
+.cache
+compile_commands.json
+*~
+src/imgui
