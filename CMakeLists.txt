@@ -43,3 +43,7 @@ add_executable(concept-demo src/concept-demo.cpp)
 
 
 
+add_executable(imgui-example src/imgui-example.cpp)
+target_link_libraries(imgui-example imgui)
+
+
