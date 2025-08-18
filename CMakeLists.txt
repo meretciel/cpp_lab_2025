@@ -29,7 +29,6 @@ if(NOT TARGET spdlog)
 endif()
 
 
-
 message("Top level source dir: ${CMAKE_SOURCE_DIR}")
 message("Current project dif: ${PROJECT_SOURCE_DIR}")
 add_subdirectory(src/build_time_cmd_demo)
@@ -37,13 +36,8 @@ add_subdirectory(src/cpp_language)
 add_subdirectory(src/demo)
 add_subdirectory(src/cuda)
 add_subdirectory(src/imgui)
-
-add_executable(graph_dfs src/graph_dfs.cpp)
-add_executable(concept-demo src/concept-demo.cpp)
+add_subdirectory(src/sfml_lab)
 
 
-
-add_executable(imgui-example src/imgui-example.cpp)
-target_link_libraries(imgui-example imgui)
 
 

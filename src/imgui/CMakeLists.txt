@@ -27,3 +27,4 @@ target_link_libraries(imgui PUBLIC glfw OpenGL::GL)
 
 add_executable(example_sdl3_opengl3 examples/example_glfw_opengl3/main.cpp)
 target_link_libraries(example_sdl3_opengl3 imgui)
+
