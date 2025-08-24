@@ -15,6 +15,9 @@ set(INCLUDE_DIRECTORIES "/home/ryan/workspace/cpp_projects/third_party/install/i
 
 add_executable(sfml_example_1 sfml_example_1.cpp)
 add_executable(sfml_example_2 sfml_example_2_window_and_keypress.cpp)
+add_executable(sfml_example_3_shape sfml_example_3_shapes.cpp)
+add_executable(sfml_example_4_sprites sfml_example_4_sprites.cpp)
+add_executable(sfml_example_5_drag_shape sfml_example_5_drag_shape.cpp)
 
 #target_link_libraries(sfml_example_1 PRIVATE SFML::Graphics SFML::Audio SFML::Network)
 #target_include_directories(sfml_example_1 PRIVATE ${INCLUDE_DIRECTORIES})
@@ -23,9 +26,27 @@ add_executable(sfml_example_2 sfml_example_2_window_and_keypress.cpp)
 #target_include_directories(sfml_example_2 PRIVATE ${INCLUDE_DIRECTORIES})
 
 
+set(RESOURCE_FILES
+        resources/red-car.png
+        resources/yellow-car.png
+        resources/green-car.png
+)
+
+add_custom_target(Resources ALL SOURCES ${RESOURCE_FILES})
+
+foreach(item IN LISTS RESOURCE_FILES)
+    message("Copying resource file ${item} to ${CMAKE_CURRENT_BINARY_DIR}")
+    configure_file(${item} ${CMAKE_CURRENT_BINARY_DIR}/${item} COPYONLY)
+endforeach()
+
+
+
 set(_SFML_LAB_EXEC_LIST
-    sfml_example_1
-    sfml_example_2
+        sfml_example_1
+        sfml_example_2
+        sfml_example_3_shape
+        sfml_example_4_sprites
+        sfml_example_5_drag_shape
 )
 
 foreach(element IN LISTS _SFML_LAB_EXEC_LIST)
